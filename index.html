@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xavier | UX/UI Designer</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Right HUD Ruler -->
+    <div class="hud-ruler">
+        <div class="ruler-tick"><span>00</span></div>
+        <div class="ruler-tick"><span>05</span></div>
+        <div class="ruler-text">PORTFOLIO</div>
+        <div class="ruler-tick"><span>10</span></div>
+        <div class="ruler-tick"><span>15</span></div>
+        <div class="ruler-text">WORK</div>
+    </div>
+
+    <div class="site-wrapper">
+        
+        <!-- Navigation -->
+        <nav class="top-nav draw-line-bottom">
+            <a href="#" class="nav-brand" aria-label="Xavier — home">
+                <img src="assets/navbarlogo.svg" alt="Xavier" class="nav-logo">
+            </a>
+            <div class="nav-links">
+                <a href="#about" class="nav-text">ABOUT</a>
+                
+                <div class="dropdown-wrapper">
+                    <a href="#work" class="nav-text dropdown-toggle active">WORK <span class="chevron">▼</span></a>
+                    <div class="dropdown-menu">
+                        <a href="#case1">Kahi v2.0 Redesign</a>
+                        <a href="#case2">AI-Powered Web Delivery</a>
+                        <a href="#case3">Headless Design System</a>
+                    </div>
+                </div>
+
+                <a href="#contact" class="btn-primary">LET'S TALK</a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero grid-2 draw-line-bottom">
+            <div class="hero-content border-right">
+                <div class="hud-label" style="gap: 0.75rem;">
+                    <span class="status-dot"></span>
+                    <span class="hud-title">UX/UI DESIGNER</span>
+                </div>
+                <h1 class="hero-title">Hey, I'm Xavier. <br>Welcome to my portfolio.</h1>
+                <p class="hero-desc">
+                    This is where I showcase my latest and coolest work, what I'm up to, and insights into my design process.
+                </p>
+                <div class="hero-ctas">
+                    <a href="#work" class="btn btn-outline">VIEW CASE STUDIES</a>
+                    <a href="#contact" class="btn btn-filled">GET IN TOUCH</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="spotlight"></div>
+                <div class="scene">
+                    <div class="cube">
+                        <!-- Outer Cube -->
+                        <div class="cube-face front"></div>
+                        <div class="cube-face back"></div>
+                        <div class="cube-face right"></div>
+                        <div class="cube-face left"></div>
+                        <div class="cube-face top"></div>
+                        <div class="cube-face bottom"></div>
+                        
+                        <!-- Inner Cube -->
+                        <div class="cube-inner">
+                            <div class="inner-face front"></div>
+                            <div class="inner-face back"></div>
+                            <div class="inner-face right"></div>
+                            <div class="inner-face left"></div>
+                            <div class="inner-face top"></div>
+                            <div class="inner-face bottom"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Marquee -->
+        <section class="tools-strip draw-line-bottom" aria-label="Tools I use">
+            <div class="tools-label border-right">
+                <span class="status-dot"></span>
+                <span>THE TOOLS I DESIGN &amp; BUILD WITH</span>
+            </div>
+            <div class="marquee">
+                <ul class="marquee-track">
+                    <li class="tool" style="--icon: url('assets/tools/figma.svg'); --brand: #F24E1E;"><span class="tool-icon"></span><span class="tool-name">FIGMA</span></li>
+                    <li class="tool" style="--icon: url('assets/tools/adobephotoshop.svg'); --brand: #31A8FF;"><span class="tool-icon"></span><span class="tool-name">PHOTOSHOP</span></li>
+                    <li class="tool" style="--icon: url('assets/tools/adobeillustrator.svg'); --brand: #FF9A00;"><span class="tool-icon"></span><span class="tool-name">ILLUSTRATOR</span></li>
+                    <li class="tool" style="--icon: url('assets/tools/claude.svg'); --brand: #D97757;"><span class="tool-icon"></span><span class="tool-name">CLAUDE</span></li>
+                    <li class="tool" style="--icon: url('assets/tools/googlegemini.svg'); --brand: #8E75B2;"><span class="tool-icon"></span><span class="tool-name">GEMINI</span></li>
+                    <li class="tool" style="--icon: url('assets/tools/openai.svg'); --brand: #FFFFFF;"><span class="tool-icon"></span><span class="tool-name">CHATGPT</span></li>
+                    <li class="tool" style="--icon: url('assets/tools/github.svg'); --brand: #FFFFFF;"><span class="tool-icon"></span><span class="tool-name">GITHUB</span></li>
+                    <li class="tool" style="--icon: url('assets/tools/visualstudiocode.svg'); --brand: #007ACC;"><span class="tool-icon"></span><span class="tool-name">VS CODE</span></li>
+                </ul>
+                <!-- Duplicate for a seamless loop -->
+                <ul class="marquee-track" aria-hidden="true">
+                    <li class="tool" style="--icon: url('assets/tools/figma.svg'); --brand: #F24E1E;"><span class="tool-icon"></span><span class="tool-name">FIGMA</span></li>
+                    <li class="tool" style="--icon: url('assets/tools/adobephotoshop.svg'); --brand: #31A8FF;"><span class="tool-icon"></span><span class="tool-name">PHOTOSHOP</span></li>
+                    <li class="tool" style="--icon: url('assets/tools/adobeillustrator.svg'); --brand: #FF9A00;"><span class="tool-icon"></span><span class="tool-name">ILLUSTRATOR</span></li>
+                    <li class="tool" style="--icon: url('assets/tools/claude.svg'); --brand: #D97757;"><span class="tool-icon"></span><span class="tool-name">CLAUDE</span></li>
+                    <li class="tool" style="--icon: url('assets/tools/googlegemini.svg'); --brand: #8E75B2;"><span class="tool-icon"></span><span class="tool-name">GEMINI</span></li>
+                    <li class="tool" style="--icon: url('assets/tools/openai.svg'); --brand: #FFFFFF;"><span class="tool-icon"></span><span class="tool-name">CHATGPT</span></li>
+                    <li class="tool" style="--icon: url('assets/tools/github.svg'); --brand: #FFFFFF;"><span class="tool-icon"></span><span class="tool-name">GITHUB</span></li>
+                    <li class="tool" style="--icon: url('assets/tools/visualstudiocode.svg'); --brand: #007ACC;"><span class="tool-icon"></span><span class="tool-name">VS CODE</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Case Studies Section -->
+        <section id="work" class="work-section draw-line-bottom">
+            <div class="section-header">
+                <div class="hud-label">
+                    <span class="hud-number">01</span>
+                    <span class="hud-divider">/</span>
+                    <span class="hud-title">MY WORK</span>
+                </div>
+                <div class="hud-subtitle">SELECT CASE STUDIES</div>
+            </div>
+
+            <div class="case-studies grid-3">
+                
+                <!-- Case Study 1 -->
+                <article class="case-card border-right reveal">
+                    <div class="card-hud">
+                        <span class="card-num bg-accent">01</span>
+                        <span class="card-category">PRODUCT DESIGN</span>
+                    </div>
+                    <div class="card-image-placeholder">
+                        <div class="placeholder-icon">📦</div>
+                    </div>
+                    <h3 class="card-title">Kahi v2.0 Redesign</h3>
+                    <p class="card-desc">
+                        Redesigning Kahi's UI and introducing new monitoring features to streamline asset tracking for restoration companies, significantly improving user retention and task efficiency.
+                    </p>
+                    <div class="card-tags">
+                        <span class="tag" data-color="blue">UX RESEARCH</span>
+                        <span class="tag" data-color="orange">UI DESIGN</span>
+                        <span class="tag" data-color="purple">ASSET TRACKING</span>
+                    </div>
+                    <a href="#" class="card-link">EXPLORE CASE STUDY ↗</a>
+                </article>
+
+                <!-- Case Study 2 -->
+                <article class="case-card border-right reveal" style="transition-delay: 0.1s">
+                    <div class="card-hud">
+                        <span class="card-num bg-accent">02</span>
+                        <span class="card-category">WEB DESIGN</span>
+                    </div>
+                    <div class="card-image-placeholder">
+                        <div class="placeholder-icon">⚡</div>
+                    </div>
+                    <h3 class="card-title">AI-Powered Web Delivery</h3>
+                    <p class="card-desc">
+                        Leveraging AI to design and deploy high-converting, premium websites for service-based businesses, reducing time-to-market while maximizing client sales and engagement.
+                    </p>
+                    <div class="card-tags">
+                        <span class="tag" data-color="red">CONVERSION</span>
+                        <span class="tag" data-color="purple">AI</span>
+                        <span class="tag" data-color="blue">FREELANCE</span>
+                    </div>
+                    <a href="#" class="card-link">EXPLORE CASE STUDY ↗</a>
+                </article>
+
+                <!-- Case Study 3 -->
+                <article class="case-card reveal" style="transition-delay: 0.2s">
+                    <div class="card-hud">
+                        <span class="card-num bg-accent">03</span>
+                        <span class="card-category">DESIGN OPS</span>
+                    </div>
+                    <div class="card-image-placeholder">
+                        <div class="placeholder-icon">⚙️</div>
+                    </div>
+                    <h3 class="card-title">Headless Design System</h3>
+                    <p class="card-desc">
+                        Building a scalable, code-first design system. Enabling designers to push token updates directly to a repo, ensuring maximum cross-platform consistency for developers.
+                    </p>
+                    <div class="card-tags">
+                        <span class="tag" data-color="orange">DESIGN TOKENS</span>
+                        <span class="tag" data-color="blue">SYSTEMS</span>
+                        <span class="tag" data-color="red">DEV HANDOFF</span>
+                    </div>
+                    <a href="#" class="card-link">EXPLORE CASE STUDY ↗</a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- About Blank Template -->
+        <section id="about" class="about-section">
+            <div class="section-header">
+                <div class="hud-label">
+                    <span class="hud-number">02</span>
+                    <span class="hud-divider">/</span>
+                    <span class="hud-title">ABOUT ME</span>
+                </div>
+            </div>
+            <div class="about-content reveal">
+                <h2 class="about-title">The human behind the screens.</h2>
+                <p class="about-desc">More info coming soon...</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="contact" class="site-footer">
+            <div class="footer-mark border-right">
+                <img src="assets/xlogo.svg" alt="Xavier logo mark" class="footer-logo">
+            </div>
+            <div class="footer-main">
+                <div class="hud-label">
+                    <span class="hud-number">03</span>
+                    <span class="hud-divider">/</span>
+                    <span class="hud-title">GET IN TOUCH</span>
+                </div>
+                <h2 class="footer-title">Got a project in mind? Let's talk.</h2>
+                <div class="hero-ctas">
+                    <a href="mailto:hello@example.com" class="btn btn-filled" id="footer-email">SEND AN EMAIL</a>
+                    <a href="#" class="btn btn-outline" id="footer-linkedin">LINKEDIN ↗</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 XAVIER</span>
+                <span>DESIGNED &amp; BUILT BY HAND</span>
+                <a href="#" class="back-to-top" id="back-to-top">BACK TO TOP ↑</a>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        const cube = document.querySelector('.cube');
+        
+        // Track mouse movement to rotate the outer cube
+        document.addEventListener('mousemove', (e) => {
+            // Base isometric rotation: X: -20deg, Y: 45deg
+            // We calculate an offset based on the mouse position relative to the center of the screen
+            let xAxis = (window.innerWidth / 2 - e.pageX) / 30;
+            let yAxis = (window.innerHeight / 2 - e.pageY) / 30;
+            
+            // Apply the new rotation
+            cube.style.transform = `rotateX(${yAxis - 20}deg) rotateY(${xAxis + 45}deg)`;
+        });
+
+        // Hero title: gradient highlight follows the cursor
+        const heroTitle = document.querySelector('.hero-title');
+
+        heroTitle.addEventListener('mousemove', (e) => {
+            const rect = heroTitle.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            heroTitle.style.setProperty('--gx', `${x}%`);
+            heroTitle.style.setProperty('--gy', `${y}%`);
+        });
+
+        // Ease back to the resting top-left light source
+        heroTitle.addEventListener('mouseleave', () => {
+            heroTitle.style.setProperty('--gx', '0%');
+            heroTitle.style.setProperty('--gy', '0%');
+        });
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOptions = {
+            threshold: 0.1, // Trigger when 10% visible
+            rootMargin: "0px 0px -50px 0px" // Trigger slightly before the element enters
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Only reveal once
+            });
+        }, revealOptions);
+
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>
