@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xavier | UX/UI Designer</title>
+    <title>Xavier | UX/UI & Web Designer</title>
     <link rel="icon" type="image/svg+xml" href="assets/xlogo.svg">
     
     <!-- Google Fonts -->
@@ -30,7 +30,7 @@
         <!-- Navigation -->
         <nav class="top-nav draw-line-bottom">
             <a href="#" class="nav-brand" aria-label="Xavier — home">
-                <img src="assets/navbarlogo.svg" alt="Xavier" class="nav-logo">
+                <img src="assets/xlogo.svg" alt="Xavier" class="nav-logo">
             </a>
             <div class="nav-links">
                 <a href="#about" class="nav-text">ABOUT</a>
@@ -53,7 +53,7 @@
             <div class="hero-content border-right">
                 <div class="hud-label" style="gap: 0.75rem;">
                     <span class="status-dot"></span>
-                    <span class="hud-title">UX/UI DESIGNER</span>
+                    <span class="hud-title">UX/UI & WEB DESIGNER</span>
                 </div>
                 <h1 class="hero-title">Hey, I'm Xavier. <br>Welcome to my portfolio.</h1>
                 <p class="hero-desc">
@@ -65,26 +65,31 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="spotlight"></div>
-                <div class="scene">
-                    <div class="cube">
-                        <!-- Outer Cube -->
-                        <div class="cube-face front"></div>
-                        <div class="cube-face back"></div>
-                        <div class="cube-face right"></div>
-                        <div class="cube-face left"></div>
-                        <div class="cube-face top"></div>
-                        <div class="cube-face bottom"></div>
-                        
-                        <!-- Inner Cube -->
-                        <div class="cube-inner">
-                            <div class="inner-face front"></div>
-                            <div class="inner-face back"></div>
-                            <div class="inner-face right"></div>
-                            <div class="inner-face left"></div>
-                            <div class="inner-face top"></div>
-                            <div class="inner-face bottom"></div>
-                        </div>
+                <div class="box-hud">
+                    <span class="box-hud__hint"><span class="status-dot"></span>GRAB &amp; SHAKE THE BOX</span>
+                    <button type="button" class="box-hud__repack" id="repack-btn">↺ REPACK THE TOOLS</button>
+                </div>
+            </div>
+
+            <!-- Physics stage: glass toolbox + tool logos (driven by hero-physics.js) -->
+            <div class="phys-stage" aria-hidden="true">
+                <div class="box-layer box-layer--back">
+                    <div class="box-glow"></div>
+                    <div class="box-3d">
+                        <div class="box-face box-face--back"></div>
+                        <div class="box-face box-face--left"></div>
+                        <div class="box-face box-face--right"></div>
+                        <div class="box-face box-face--bottom"></div>
+                        <div class="box-flap box-flap--back"></div>
+                        <div class="box-flap box-flap--left"></div>
+                        <div class="box-flap box-flap--right"></div>
+                    </div>
+                </div>
+                <div class="phys-logos"></div>
+                <div class="box-layer box-layer--front">
+                    <div class="box-3d">
+                        <div class="box-face box-face--front"></div>
+                        <div class="box-flap box-flap--front"></div>
                     </div>
                 </div>
             </div>
@@ -156,7 +161,7 @@
                 </article>
 
                 <!-- Case Study 2 -->
-                <article class="case-card border-right reveal" style="transition-delay: 0.1s">
+                <article class="case-card border-right reveal" style="--reveal-delay: 0.1s">
                     <div class="card-hud">
                         <span class="card-num bg-accent">02</span>
                         <span class="card-category">WEB DESIGN</span>
@@ -177,7 +182,7 @@
                 </article>
 
                 <!-- Case Study 3 -->
-                <article class="case-card reveal" style="transition-delay: 0.2s">
+                <article class="case-card reveal" style="--reveal-delay: 0.2s">
                     <div class="card-hud">
                         <span class="card-num bg-accent">03</span>
                         <span class="card-category">DESIGN OPS</span>
@@ -241,20 +246,30 @@
 
     </div>
 
-    <script>
-        const cube = document.querySelector('.cube');
-        
-        // Track mouse movement to rotate the outer cube
-        document.addEventListener('mousemove', (e) => {
-            // Base isometric rotation: X: -20deg, Y: 45deg
-            // We calculate an offset based on the mouse position relative to the center of the screen
-            let xAxis = (window.innerWidth / 2 - e.pageX) / 30;
-            let yAxis = (window.innerHeight / 2 - e.pageY) / 30;
-            
-            // Apply the new rotation
-            cube.style.transform = `rotateX(${yAxis - 20}deg) rotateY(${xAxis + 45}deg)`;
-        });
+    <!-- Accessibility FAB -->
+    <div class="a11y-fab-wrapper">
+        <div class="a11y-menu" id="a11y-menu">
+            <div class="a11y-menu-header">Accessibility</div>
+            <label class="a11y-toggle">
+                <span>Large Text</span>
+                <input type="checkbox" id="a11y-large-text-toggle">
+                <span class="a11y-slider"></span>
+            </label>
+        </div>
+        <button class="a11y-fab" id="a11y-fab" aria-label="Accessibility Options">
+            <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                <circle cx="12" cy="4" r="2.5" fill="currentColor" stroke="none"></circle>
+                <path d="M12 9v6"></path>
+                <path d="M4 9h16"></path>
+                <path d="M12 15l-3.5 7"></path>
+                <path d="M12 15l3.5 7"></path>
+            </svg>
+        </button>
+    </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/matter-js@0.20.0/build/matter.min.js"></script>
+    <script src="hero-physics.js"></script>
+    <script>
         // Hero title: gradient highlight follows the cursor
         const heroTitle = document.querySelector('.hero-title');
 
@@ -277,7 +292,7 @@
         
         const revealOptions = {
             threshold: 0.1, // Trigger when 10% visible
-            rootMargin: "0px 0px -50px 0px" // Trigger slightly before the element enters
+            rootMargin: "0px 0px -100px 0px" // Require element to be further up the viewport
         };
 
         const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -291,6 +306,30 @@
         }, revealOptions);
 
         revealElements.forEach(el => revealObserver.observe(el));
+
+        // Accessibility FAB logic
+        const a11yFab = document.getElementById('a11y-fab');
+        const a11yMenu = document.getElementById('a11y-menu');
+        const a11yLargeTextToggle = document.getElementById('a11y-large-text-toggle');
+
+        a11yFab.addEventListener('click', () => {
+            a11yMenu.classList.toggle('is-open');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!a11yFab.contains(e.target) && !a11yMenu.contains(e.target)) {
+                a11yMenu.classList.remove('is-open');
+            }
+        });
+
+        a11yLargeTextToggle.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                document.body.classList.add('a11y-large-text');
+            } else {
+                document.body.classList.remove('a11y-large-text');
+            }
+        });
     </script>
 </body>
 </html>
