@@ -459,9 +459,9 @@ a {
 }
 
 .hint-wrapper {
-    position: relative;
     display: flex;
     align-items: center;
+    gap: 12px;
 }
 
 .hero-desc {
@@ -740,19 +740,12 @@ body.is-grabbing * {
 }
 
 .box-hud__hint {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    color: var(--ink-muted);
     font-family: var(--font-mono);
     font-size: 9px;
     letter-spacing: 0.05em;
     white-space: nowrap;
-    margin-right: 12px;
-    transition: opacity 0.3s ease, transform 0.3s ease, color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
-}
-
-.box-hud__hint {
-    color: var(--ink-muted);
+    transition: opacity 0.3s ease, color 0.2s ease;
 }
 
 .hero.is-used .box-hud__hint {
@@ -774,11 +767,6 @@ body.is-grabbing * {
     color: var(--ink);
 }
 
-.hero.is-spilled .box-hud__hint {
-    opacity: 0;
-    transform: translateY(-6px);
-}
-
 .box-hud.is-spilled .box-hud__repack {
     opacity: 1;
     transform: translateY(0);
@@ -786,20 +774,14 @@ body.is-grabbing * {
 }
 
 .grab-hint-arrow {
-    position: absolute;
-    left: 100%;
-    top: 50%;
-    margin-top: -12px;
-    margin-left: 12px;
-    width: 200px;
-    transform: scale(0.6);
-    transform-origin: left center;
+    width: 120px;
     color: var(--line);
     opacity: 1;
     transition: opacity 0.4s ease;
     pointer-events: none;
 }
 
+.hero.is-spilled .box-hud__hint,
 .hero.is-spilled .grab-hint-arrow {
     opacity: 0;
 }
