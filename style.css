@@ -715,14 +715,17 @@ body.is-grabbing * {
     justify-content: center;
     gap: 0.6rem;
     font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.1em;
+    font-size: 9px;
+    letter-spacing: 0.05em;
     white-space: nowrap;
     transition: opacity 0.3s ease, transform 0.3s ease, color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .box-hud__hint {
     color: var(--ink-muted);
+    --tx: -453px;
+    --ty: -415px;
+    transform: translate(var(--tx), var(--ty));
 }
 
 .box-hud.is-used .box-hud__hint {
@@ -746,13 +749,32 @@ body.is-grabbing * {
 
 .box-hud.is-spilled .box-hud__hint {
     opacity: 0;
-    transform: translateY(-6px);
+    transform: translate(var(--tx), calc(var(--ty) - 6px));
 }
 
 .box-hud.is-spilled .box-hud__repack {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+}
+
+.grab-hint-arrow {
+    position: absolute;
+    bottom: 100%;
+    right: 50%;
+    width: 200px;
+    height: auto;
+    margin-right: -100px;
+    margin-bottom: 8px;
+    color: var(--line);
+    opacity: 1;
+    transform: translate(-319px, -354px) rotate(0deg) scale(0.6);
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.box-hud.is-spilled .grab-hint-arrow {
+    opacity: 0;
 }
 
 /* =========================================
