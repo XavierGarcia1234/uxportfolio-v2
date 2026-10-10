@@ -445,6 +445,25 @@ a {
     initial-value: 0%;
 }
 
+.hero-text-wrapper {
+    width: fit-content;
+    max-width: 100%;
+}
+
+.hero-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.hint-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
 .hero-desc {
     font-size: 1.25rem;
     color: var(--ink-muted);
@@ -706,7 +725,6 @@ body.is-grabbing * {
     opacity: 1;
 }
 
-.box-hud__hint,
 .box-hud__repack {
     position: absolute;
     inset: 0;
@@ -722,13 +740,22 @@ body.is-grabbing * {
 }
 
 .box-hud__hint {
-    color: var(--ink-muted);
-    --tx: -453px;
-    --ty: -415px;
-    transform: translate(var(--tx), var(--ty));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    margin-right: 12px;
+    transition: opacity 0.3s ease, transform 0.3s ease, color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
 
-.box-hud.is-used .box-hud__hint {
+.box-hud__hint {
+    color: var(--ink-muted);
+}
+
+.hero.is-used .box-hud__hint {
     color: rgba(var(--ink-rgb), 0.35);
 }
 
@@ -747,9 +774,9 @@ body.is-grabbing * {
     color: var(--ink);
 }
 
-.box-hud.is-spilled .box-hud__hint {
+.hero.is-spilled .box-hud__hint {
     opacity: 0;
-    transform: translate(var(--tx), calc(var(--ty) - 6px));
+    transform: translateY(-6px);
 }
 
 .box-hud.is-spilled .box-hud__repack {
@@ -760,20 +787,20 @@ body.is-grabbing * {
 
 .grab-hint-arrow {
     position: absolute;
-    bottom: 100%;
-    right: 50%;
+    left: 100%;
+    top: 50%;
+    margin-top: -12px;
+    margin-left: 12px;
     width: 200px;
-    height: auto;
-    margin-right: -100px;
-    margin-bottom: 8px;
+    transform: scale(0.6);
+    transform-origin: left center;
     color: var(--line);
     opacity: 1;
-    transform: translate(-319px, -354px) rotate(0deg) scale(0.6);
     transition: opacity 0.4s ease;
     pointer-events: none;
 }
 
-.box-hud.is-spilled .grab-hint-arrow {
+.hero.is-spilled .grab-hint-arrow {
     opacity: 0;
 }
 

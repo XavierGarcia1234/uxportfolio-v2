@@ -324,6 +324,7 @@
         if (outside !== spilled) {
             spilled = outside;
             hud.classList.toggle('is-spilled', spilled);
+            hero.classList.toggle('is-spilled', spilled);
         }
     }
 
@@ -395,6 +396,7 @@
         }
         document.body.classList.add('is-grabbing');
         hud.classList.add('is-used');
+        hero.classList.add('is-used');
     }, true);
 
     window.addEventListener('pointermove', e => {
