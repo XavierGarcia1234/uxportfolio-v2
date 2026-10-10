@@ -9,7 +9,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
 </head>
@@ -33,6 +33,11 @@
                 <img src="assets/xlogo.svg" alt="Xavier" class="nav-logo">
             </a>
             <div class="nav-links">
+                <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <a href="design-system.html" class="nav-text">SYSTEM</a>
                 <a href="#about" class="nav-text">ABOUT</a>
                 
                 <div class="dropdown-wrapper">
@@ -108,8 +113,8 @@
                     <li class="tool" style="--icon: url('assets/tools/adobeillustrator.svg'); --brand: #FF9A00;"><span class="tool-icon"></span><span class="tool-name">ILLUSTRATOR</span></li>
                     <li class="tool" style="--icon: url('assets/tools/claude.svg'); --brand: #D97757;"><span class="tool-icon"></span><span class="tool-name">CLAUDE</span></li>
                     <li class="tool" style="--icon: url('assets/tools/googlegemini.svg'); --brand: #8E75B2;"><span class="tool-icon"></span><span class="tool-name">GEMINI</span></li>
-                    <li class="tool" style="--icon: url('assets/tools/openai.svg'); --brand: #FFFFFF;"><span class="tool-icon"></span><span class="tool-name">CHATGPT</span></li>
-                    <li class="tool" style="--icon: url('assets/tools/github.svg'); --brand: #FFFFFF;"><span class="tool-icon"></span><span class="tool-name">GITHUB</span></li>
+                    <li class="tool" style="--icon: url('assets/tools/openai.svg'); --brand: var(--brand-white);"><span class="tool-icon"></span><span class="tool-name">CHATGPT</span></li>
+                    <li class="tool" style="--icon: url('assets/tools/github.svg'); --brand: var(--brand-white);"><span class="tool-icon"></span><span class="tool-name">GITHUB</span></li>
                     <li class="tool" style="--icon: url('assets/tools/visualstudiocode.svg'); --brand: #007ACC;"><span class="tool-icon"></span><span class="tool-name">VS CODE</span></li>
                 </ul>
                 <!-- Duplicate for a seamless loop -->
@@ -119,8 +124,8 @@
                     <li class="tool" style="--icon: url('assets/tools/adobeillustrator.svg'); --brand: #FF9A00;"><span class="tool-icon"></span><span class="tool-name">ILLUSTRATOR</span></li>
                     <li class="tool" style="--icon: url('assets/tools/claude.svg'); --brand: #D97757;"><span class="tool-icon"></span><span class="tool-name">CLAUDE</span></li>
                     <li class="tool" style="--icon: url('assets/tools/googlegemini.svg'); --brand: #8E75B2;"><span class="tool-icon"></span><span class="tool-name">GEMINI</span></li>
-                    <li class="tool" style="--icon: url('assets/tools/openai.svg'); --brand: #FFFFFF;"><span class="tool-icon"></span><span class="tool-name">CHATGPT</span></li>
-                    <li class="tool" style="--icon: url('assets/tools/github.svg'); --brand: #FFFFFF;"><span class="tool-icon"></span><span class="tool-name">GITHUB</span></li>
+                    <li class="tool" style="--icon: url('assets/tools/openai.svg'); --brand: var(--brand-white);"><span class="tool-icon"></span><span class="tool-name">CHATGPT</span></li>
+                    <li class="tool" style="--icon: url('assets/tools/github.svg'); --brand: var(--brand-white);"><span class="tool-icon"></span><span class="tool-name">GITHUB</span></li>
                     <li class="tool" style="--icon: url('assets/tools/visualstudiocode.svg'); --brand: #007ACC;"><span class="tool-icon"></span><span class="tool-name">VS CODE</span></li>
                 </ul>
             </div>
@@ -323,12 +328,61 @@
             }
         });
 
+        const currentA11y = localStorage.getItem('a11y-large-text') === 'true';
+        if (currentA11y) {
+            document.body.classList.add('a11y-large-text');
+            a11yLargeTextToggle.checked = true;
+        }
+
         a11yLargeTextToggle.addEventListener('change', (e) => {
             if (e.target.checked) {
                 document.body.classList.add('a11y-large-text');
+                localStorage.setItem('a11y-large-text', 'true');
             } else {
                 document.body.classList.remove('a11y-large-text');
+                localStorage.setItem('a11y-large-text', 'false');
             }
+        });
+
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        
+        function updateLogos(theme) {
+            const logos = document.querySelectorAll('img[src*="xlogo"]');
+            logos.forEach(logo => {
+                if (theme === 'light') {
+                    logo.src = logo.src.replace('xlogo.svg', 'xlogo-light.svg');
+                } else {
+                    logo.src = logo.src.replace('xlogo-light.svg', 'xlogo.svg');
+                }
+            });
+        }
+
+        if (currentTheme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            updateLogos('light');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            // Add transition class for smooth theme switching
+            document.documentElement.classList.add('theme-transition');
+            
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'light') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+                updateLogos('dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                updateLogos('light');
+            }
+            
+            // Remove transition class after the transition finishes (400ms)
+            setTimeout(() => {
+                document.documentElement.classList.remove('theme-transition');
+            }, 400);
         });
     </script>
 </body>

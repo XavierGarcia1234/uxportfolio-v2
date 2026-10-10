@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System | Xavier</title>
+    <link rel="icon" type="image/svg+xml" href="assets/xlogo.svg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Right HUD Ruler -->
+    <div class="hud-ruler">
+        <div class="ruler-tick"><span>00</span></div>
+        <div class="ruler-tick"><span>05</span></div>
+        <div class="ruler-text">SYSTEM</div>
+        <div class="ruler-tick"><span>10</span></div>
+        <div class="ruler-tick"><span>15</span></div>
+        <div class="ruler-text">TOKENS</div>
+    </div>
+
+    <div class="site-wrapper">
+
+        <!-- Navigation -->
+        <nav class="top-nav draw-line-bottom">
+            <a href="index.html" class="nav-brand" aria-label="Xavier — home">
+                <img src="assets/xlogo.svg" alt="Xavier" class="nav-logo">
+            </a>
+            <div class="nav-links">
+                <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <a href="design-system.html" class="nav-text active">SYSTEM</a>
+                <a href="index.html#about" class="nav-text">ABOUT</a>
+
+                <div class="dropdown-wrapper">
+                    <a href="index.html#work" class="nav-text dropdown-toggle">WORK <span class="chevron">▼</span></a>
+                    <div class="dropdown-menu">
+                        <a href="index.html#case1">Kahi v2.0 Redesign</a>
+                        <a href="index.html#case2">AI-Powered Web Delivery</a>
+                        <a href="index.html#case3">Headless Design System</a>
+                    </div>
+                </div>
+
+                <a href="index.html#contact" class="btn-primary">LET'S TALK</a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="ds-hero draw-line-bottom">
+            <div class="ds-hero-content">
+                <div class="hud-label" style="gap: 0.75rem;">
+                    <span class="status-dot"></span>
+                    <span class="hud-title">CORE IDENTITY</span>
+                </div>
+                <h1 class="hero-title" style="margin-bottom: 2rem;">Design System.</h1>
+                <p class="hero-desc">
+                    The atomic primitives, semantic tokens, and components that power this digital experience.
+                </p>
+
+                <div style="display: flex; align-items: stretch; gap: 1rem; margin-top: 3rem;">
+                    <div class="ds-toggle-wrapper" style="margin-top: 0; display: flex; align-items: center;">
+                        <div class="hud-subtitle" style="margin-bottom: 0;">SHOW DEV TOKENS</div>
+                        <label class="a11y-toggle">
+                            <input type="checkbox" id="ds-token-toggle">
+                            <span class="a11y-slider"></span>
+                        </label>
+                    </div>
+                    <a href="tokens.json" download="tokens.json" class="btn btn-outline"
+                        style="display: inline-flex; align-items: center;">DOWNLOAD TOKENS (.JSON)</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Colors -->
+        <section class="ds-section draw-line-bottom">
+            <div class="section-header">
+                <div class="hud-label">
+                    <span class="hud-number">01</span>
+                    <span class="hud-divider">/</span>
+                    <span class="hud-title">COLORS</span>
+                </div>
+            </div>
+
+            <div class="ds-grid">
+                <div class="ds-column border-right">
+                    <div class="ds-subheading">Backgrounds & Surfaces</div>
+                    <div class="color-swatch-wrapper">
+                        <div class="color-swatch" style="background: var(--bg); border: 1px solid var(--line);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Base Background</div>
+                            <div class="color-hex" data-var="--bg">#0D0D0D</div>
+                        </div>
+                        <div class="ds-token" data-token="color.background.base"></div>
+                    </div>
+                    <div class="color-swatch-wrapper">
+                        <div class="color-swatch" style="background: var(--bg-raised); border: 1px solid var(--line);">
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Raised Surface</div>
+                            <div class="color-hex" data-var="--bg-raised">#141414</div>
+                        </div>
+                        <div class="ds-token" data-token="color.background.raised"></div>
+                    </div>
+                    <div class="color-swatch-wrapper">
+                        <div class="color-swatch" style="background: rgba(13, 13, 13, 0.6); border: 1px solid var(--line);">
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Overlay</div>
+                            <div class="color-hex" data-var="--bg-overlay">rgba(13, 13, 13, 0.6)</div>
+                        </div>
+                        <div class="ds-token" data-token="color.background.overlay"></div>
+                    </div>
+                </div>
+
+                <div class="ds-column border-right">
+                    <div class="ds-subheading">Ink & Borders</div>
+                    <div class="color-swatch-wrapper">
+                        <div class="color-swatch" style="background: var(--ink);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Primary Ink</div>
+                            <div class="color-hex" data-var="--ink">#FFFFFF</div>
+                        </div>
+                        <div class="ds-token" data-token="color.ink.primary"></div>
+                    </div>
+                    <div class="color-swatch-wrapper">
+                        <div class="color-swatch" style="background: var(--ink-muted);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Muted Ink</div>
+                            <div class="color-hex" data-var="--ink-muted">rgba(255, 255, 255, 0.6)</div>
+                        </div>
+                        <div class="ds-token" data-token="color.ink.muted"></div>
+                    </div>
+                    <div class="color-swatch-wrapper">
+                        <div class="color-swatch" style="background: var(--line);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Border Line</div>
+                            <div class="color-hex" data-var="--line">rgba(255, 255, 255, 0.1)</div>
+                        </div>
+                        <div class="ds-token" data-token="color.border.line"></div>
+                    </div>
+                    <div class="color-swatch-wrapper">
+                        <div class="color-swatch" style="background: #000000; border: 1px solid var(--line);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Inverse Ink</div>
+                            <div class="color-hex" data-var="--ink-inverse">#000000</div>
+                        </div>
+                        <div class="ds-token" data-token="color.ink.inverse"></div>
+                    </div>
+                </div>
+
+                <div class="ds-column">
+                    <div class="ds-subheading">Accent & Interactive</div>
+                    <div class="color-swatch-wrapper">
+                        <div class="color-swatch" style="background: var(--accent);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Neon Accent</div>
+                            <div class="color-hex" data-var="--accent">#BFF549</div>
+                        </div>
+                        <div class="ds-token" data-token="color.accent.base"></div>
+                    </div>
+                    <div class="color-swatch-wrapper">
+                        <div class="color-swatch" style="background: var(--accent-hover);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Accent Hover</div>
+                            <div class="color-hex" data-var="--accent-hover">#8CC21F</div>
+                        </div>
+                        <div class="ds-token" data-token="color.accent.hover"></div>
+                    </div>
+                    <div class="color-swatch-wrapper">
+                        <div class="color-swatch" style="background: var(--accent-ink);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Accent Ink</div>
+                            <div class="color-hex" data-var="--accent-ink">#0D0D0D</div>
+                        </div>
+                        <div class="ds-token" data-token="color.accent.ink"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Typography -->
+        <section class="ds-section draw-line-bottom">
+            <div class="section-header">
+                <div class="hud-label">
+                    <span class="hud-number">02</span>
+                    <span class="hud-divider">/</span>
+                    <span class="hud-title">TYPOGRAPHY</span>
+                </div>
+            </div>
+
+            <div class="ds-grid">
+                <div class="ds-column border-right type-col">
+                    <div class="ds-subheading">Headings <div class="ds-token ds-token-inline"
+                            data-token="typography.fontFamily.display"></div>
+                    </div>
+                    <div class="type-specimen">
+                        <div class="type-preview"
+                            style="font-family: var(--font-display); font-size: 4rem; font-weight: 700; line-height: 1.1; letter-spacing: -0.04em;">
+                            Aa</div>
+                        <div class="type-name">Archivo</div>
+                        <div class="type-weights">Medium (500), Bold (700)</div>
+
+                        <div class="type-example" style="margin-top: 2rem;">
+                            <div class="type-label">H1 HERO TITLE</div>
+                            <h1 style="font-size: clamp(3rem, 5vw, 4.5rem);">Design System.</h1>
+                        </div>
+                        <div class="type-example" style="margin-top: 1.5rem;">
+                            <div class="type-label">H2 SECTION TITLE</div>
+                            <h2 style="font-size: clamp(2rem, 3.5vw, 3rem);">Case Studies.</h2>
+                        </div>
+                        <div class="type-example" style="margin-top: 1.5rem;">
+                            <div class="type-label">H3 CARD TITLE</div>
+                            <h3 style="font-size: 1.5rem;">Product Design</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ds-column border-right type-col">
+                    <div class="ds-subheading">Body & UI <div class="ds-token ds-token-inline"
+                            data-token="typography.fontFamily.body"></div>
+                    </div>
+                    <div class="type-specimen">
+                        <div class="type-preview"
+                            style="font-family: var(--font-body); font-size: 4rem; font-weight: 500;">Aa</div>
+                        <div class="type-name">Inter</div>
+                        <div class="type-weights">Regular (400), Medium (500), SemiBold (600)</div>
+
+                        <div class="type-example" style="margin-top: 2rem;">
+                            <div class="type-label">HERO DESC</div>
+                            <p style="font-size: 1.25rem; color: var(--ink-muted);">The atomic primitives, semantic
+                                tokens, and components.</p>
+                        </div>
+                        <div class="type-example" style="margin-top: 1.5rem;">
+                            <div class="type-label">BODY COPY</div>
+                            <p style="font-size: 1rem; color: var(--ink-muted);">Redesigning UI and introducing new
+                                monitoring features to streamline asset tracking.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ds-column type-col">
+                    <div class="ds-subheading">Mono <div class="ds-token ds-token-inline"
+                            data-token="typography.fontFamily.mono"></div>
+                    </div>
+
+                    <div class="type-specimen" style="margin-bottom: 2.5rem;">
+                        <div class="type-preview" style="font-family: var(--font-mono); font-size: 3rem;">Aa</div>
+                        <div class="type-name">JetBrains Mono</div>
+
+                        <div class="type-example" style="margin-top: 1.5rem;">
+                            <div class="type-label">HUD LABEL</div>
+                            <div class="hud-label" style="margin-bottom:0;"><span class="hud-number">01</span><span
+                                    class="hud-divider">/</span><span class="hud-title">MY WORK</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Components -->
+        <section class="ds-section">
+            <div class="section-header">
+                <div class="hud-label">
+                    <span class="hud-number">03</span>
+                    <span class="hud-divider">/</span>
+                    <span class="hud-title">COMPONENTS</span>
+                </div>
+            </div>
+
+            <div class="ds-grid">
+                <div class="ds-column border-right">
+                    <div class="ds-subheading">Buttons & Links</div>
+                    <div class="component-showcase">
+                        <div class="comp-item">
+                            <div class="type-label">PRIMARY BUTTON</div>
+                            <div style="margin-top: 1rem; position: relative; display: inline-block;">
+                                <a href="#" class="btn btn-filled" onclick="event.preventDefault()">GET IN TOUCH</a>
+                                <div class="ds-token ds-token-comp" data-token="component.button.primary"></div>
+                            </div>
+                        </div>
+                        <div class="comp-item" style="margin-top: 3.5rem;">
+                            <div class="type-label">OUTLINE BUTTON</div>
+                            <div style="margin-top: 1rem; position: relative; display: inline-block;">
+                                <a href="#" class="btn btn-outline" onclick="event.preventDefault()">VIEW CASE
+                                    STUDIES</a>
+                                <div class="ds-token ds-token-comp" data-token="component.button.outline"></div>
+                            </div>
+                        </div>
+                        <div class="comp-item" style="margin-top: 3.5rem;">
+                            <div class="type-label">NAV BUTTON</div>
+                            <div style="margin-top: 1rem; position: relative; display: inline-block;">
+                                <a href="#" class="btn-primary" style="display: inline-flex; height: 60px;"
+                                    onclick="event.preventDefault()">LET'S TALK</a>
+                                <div class="ds-token ds-token-comp" data-token="component.button.nav"></div>
+                            </div>
+                        </div>
+                        <div class="comp-item" style="margin-top: 3.5rem;">
+                            <div class="type-label">CARD LINK</div>
+                            <div style="margin-top: 1rem; position: relative; display: inline-block;">
+                                <a href="#" class="card-link" onclick="event.preventDefault()">EXPLORE CASE STUDY ↗</a>
+                                <div class="ds-token ds-token-comp" data-token="component.link.card"></div>
+                            </div>
+                        </div>
+                        <div class="comp-item" style="margin-top: 3.5rem;">
+                            <div class="type-label">NAV LINK</div>
+                            <div style="margin-top: 1rem; position: relative; display: inline-block;">
+                                <div class="nav-links"
+                                    style="display: flex; gap: 1.5rem; background: var(--bg-raised); padding: 1rem 1.5rem; border: 1px solid var(--line);">
+                                    <a href="#" class="nav-text" onclick="event.preventDefault()">SYSTEM</a>
+                                    <a href="#" class="nav-text active" onclick="event.preventDefault()">ABOUT</a>
+                                </div>
+                                <div class="ds-token ds-token-comp" data-token="component.link.nav"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ds-column border-right">
+                    <div class="ds-subheading">Tags</div>
+                    <div class="component-showcase">
+                        <div class="comp-item">
+                            <div class="type-label">DEFAULT TAG</div>
+                            <div style="margin-top: 1rem; position: relative; display: inline-block;">
+                                <span class="tag">UX RESEARCH</span>
+                                <div class="ds-token ds-token-comp" data-token="component.tag.default"></div>
+                            </div>
+                        </div>
+                        <div class="comp-item" style="margin-top: 3.5rem;">
+                            <div class="type-label">COLORED TAGS (HOVER)</div>
+                            <div
+                                style="margin-top: 1rem; position: relative; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                <span class="tag" data-color="blue">BLUE</span>
+                                <span class="tag" data-color="orange">ORANGE</span>
+                                <span class="tag" data-color="purple">PURPLE</span>
+                                <span class="tag" data-color="red">RED</span>
+                                <div class="ds-token ds-token-comp" style="width:fit-content;"
+                                    data-token="component.tag.colored"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ds-column">
+                    <div class="ds-subheading">HUD Elements</div>
+                    <div class="component-showcase">
+                        <div class="comp-item">
+                            <div class="type-label">CARD HUD</div>
+                            <div style="margin-top: 1rem; position: relative; display: inline-block;">
+                                <div class="card-hud" style="margin-bottom:0;">
+                                    <span class="card-num bg-accent">01</span>
+                                    <span class="card-category">PRODUCT DESIGN</span>
+                                </div>
+                                <div class="ds-token ds-token-comp" data-token="component.hud.card"></div>
+                            </div>
+                        </div>
+                        <div class="comp-item" style="margin-top: 3.5rem;">
+                            <div class="type-label">STATUS INDICATOR</div>
+                            <div
+                                style="margin-top: 1rem; position: relative; display: inline-flex; align-items: center; gap: 0.5rem;">
+                                <span class="status-dot"></span>
+                                <span class="hud-subtitle" style="color:var(--ink);">ACTIVE</span>
+                                <div class="ds-token ds-token-comp" data-token="component.hud.status"></div>
+                            </div>
+                        </div>
+                        <div class="comp-item" style="margin-top: 3.5rem;">
+                            <div class="type-label">REPACK TOOLS BUTTON</div>
+                            <div style="margin-top: 1rem; position: relative; display: inline-block;">
+                                <button type="button" class="box-hud__repack"
+                                    style="opacity: 1; transform: translateY(0); position: relative; pointer-events: auto; width: 210px; height: 34px;">↺
+                                    REPACK THE TOOLS</button>
+                                <div class="ds-token ds-token-comp" data-token="component.hud.repack"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="contact" class="site-footer" style="margin-top: 0; border-top: 1px solid var(--line);">
+            <div class="footer-mark border-right">
+                <img src="assets/xlogo.svg" alt="Xavier logo mark" class="footer-logo">
+            </div>
+            <div class="footer-main">
+                <h2 class="footer-title">Got a project in mind? Let's talk.</h2>
+                <div class="hero-ctas">
+                    <a href="mailto:hello@example.com" class="btn btn-filled">SEND AN EMAIL</a>
+                    <a href="#" class="btn btn-outline">LINKEDIN ↗</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 XAVIER</span>
+                <span>DESIGNED &amp; BUILT BY HAND</span>
+                <a href="#" class="back-to-top" id="back-to-top">BACK TO TOP ↑</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Accessibility HUD -->
+    <div class="a11y-fab-wrapper">
+        <div class="a11y-menu" id="a11y-menu">
+            <div class="a11y-menu-header">Accessibility</div>
+            <label class="a11y-toggle">
+                <span>Large Text</span>
+                <input type="checkbox" id="a11y-large-text-toggle">
+                <span class="a11y-slider"></span>
+            </label>
+        </div>
+        <button class="a11y-fab" id="a11y-fab" aria-label="Accessibility Options">
+            <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                <circle cx="12" cy="4" r="2.5" fill="currentColor" stroke="none"></circle>
+                <path d="M12 9v6"></path>
+                <path d="M4 9h16"></path>
+                <path d="M12 15l-3.5 7"></path>
+                <path d="M12 15l3.5 7"></path>
+            </svg>
+        </button>
+    </div>
+
+    <script>
+        // Token Toggle Logic
+        const tokenToggle = document.getElementById('ds-token-toggle');
+        tokenToggle.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                document.body.classList.add('show-tokens');
+            } else {
+                document.body.classList.remove('show-tokens');
+            }
+        });
+
+        // Accessibility FAB logic
+        const a11yFab = document.getElementById('a11y-fab');
+        const a11yMenu = document.getElementById('a11y-menu');
+        const a11yLargeTextToggle = document.getElementById('a11y-large-text-toggle');
+
+        if (a11yFab && a11yMenu) {
+            a11yFab.addEventListener('click', () => {
+                a11yMenu.classList.toggle('is-open');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!a11yFab.contains(e.target) && !a11yMenu.contains(e.target)) {
+                    a11yMenu.classList.remove('is-open');
+                }
+            });
+        }
+
+        if (a11yLargeTextToggle) {
+            const currentA11y = localStorage.getItem('a11y-large-text') === 'true';
+            if (currentA11y) {
+                document.body.classList.add('a11y-large-text');
+                a11yLargeTextToggle.checked = true;
+            }
+
+            a11yLargeTextToggle.addEventListener('change', (e) => {
+                if (e.target.checked) {
+                    document.body.classList.add('a11y-large-text');
+                    localStorage.setItem('a11y-large-text', 'true');
+                } else {
+                    document.body.classList.remove('a11y-large-text');
+                    localStorage.setItem('a11y-large-text', 'false');
+                }
+            });
+        }
+
+        // Header interactive title from index.js
+        const heroTitle = document.querySelector('.hero-title');
+        if (heroTitle) {
+            heroTitle.addEventListener('mousemove', (e) => {
+                const rect = heroTitle.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                heroTitle.style.setProperty('--gx', `${x}%`);
+                heroTitle.style.setProperty('--gy', `${y}%`);
+            });
+            heroTitle.addEventListener('mouseleave', () => {
+                heroTitle.style.setProperty('--gx', '0%');
+                heroTitle.style.setProperty('--gy', '0%');
+            });
+        }
+
+        // Fade in elements on scroll
+        const revealElements = document.querySelectorAll('.ds-section');
+        const revealOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+        const revealObserver = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            });
+        }, revealOptions);
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+
+        function updateHexCodes() {
+            const hexElements = document.querySelectorAll('.color-hex[data-var]');
+            hexElements.forEach(el => {
+                const varName = el.getAttribute('data-var');
+                let val = getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
+                
+                // If it's the rgba one for --ink-muted or --line
+                if (val.includes('var(--ink-rgb)')) {
+                    const rgb = getComputedStyle(document.documentElement).getPropertyValue('--ink-rgb').trim();
+                    val = val.replace('var(--ink-rgb)', rgb);
+                }
+                
+                el.textContent = val;
+                
+                // Update swatch backgrounds if they are inline styled to something specific?
+                // Actually the swatches are already styled with `var(--varName)` in HTML, so they update automatically!
+            });
+        }
+        
+        function updateLogos(theme) {
+            const logos = document.querySelectorAll('img[src*="xlogo"]');
+            logos.forEach(logo => {
+                if (theme === 'light') {
+                    logo.src = logo.src.replace('xlogo.svg', 'xlogo-light.svg');
+                } else {
+                    logo.src = logo.src.replace('xlogo-light.svg', 'xlogo.svg');
+                }
+            });
+        }
+
+        if (currentTheme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            updateLogos('light');
+        }
+
+        // Initial call - wait until after theme is set
+        updateHexCodes();
+        
+        themeToggle.addEventListener('click', () => {
+            // Add transition class for smooth theme switching
+            document.documentElement.classList.add('theme-transition');
+            
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'light') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+                updateLogos('dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                updateLogos('light');
+            }
+            
+            // Remove transition class after the transition finishes (400ms)
+            setTimeout(() => {
+                document.documentElement.classList.remove('theme-transition');
+                updateHexCodes();
+            }, 400);
+        });
+    </script>
+</body>
+
+</html>
